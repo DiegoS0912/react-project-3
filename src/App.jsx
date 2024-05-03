@@ -25,7 +25,7 @@ function App() {
     setFinder(textInput.current.value.trim());
   }
 
-  const quantity = 6;
+  const quantity = 8;
   const second = currentPage * quantity;
   const first = second - quantity;
   const residentsPart = location && location.residents.slice(first, second);
@@ -35,10 +35,17 @@ function App() {
     <div className='app'>
       {
         isLoading ?
-          <h2>Loading...</h2>
+          <div className='app_loading'>
+            <img src="https://i.gifer.com/ZiaV.gif" alt="Loading" />
+            <h2>Loading...</h2>
+          </div>
           :
           <>
-            <h1>Rick and Morty</h1>
+            <div className='app_header'>
+              <header >
+                <img src="https://i.redd.it/o6cwlzg3exk41.png" alt="" />
+              </header>
+            </div>
             <form 
               onSubmit={handleSubmit}
               className='app_form'
@@ -53,7 +60,11 @@ function App() {
             </form>
             {
               hasError || finder === '0' ?
-                <h2>This location do not exist</h2>
+                <div className='non-existent'>
+                  <hr />
+                  <h2>This location does not exist</h2>
+                  <hr />
+                </div>
                 :
                 <>
                 <LocationCard 
