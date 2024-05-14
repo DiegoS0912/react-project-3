@@ -42,8 +42,8 @@ function App() {
           :
           <>
             <div className='app_header'>
-              <header >
-                <img src="https://i.redd.it/o6cwlzg3exk41.png" alt="" />
+              <header>
+                <img src="https://i.redd.it/o6cwlzg3exk41.png" alt="image-header" />
               </header>
             </div>
             <form 
